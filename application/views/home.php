@@ -4,7 +4,7 @@
 
     <div class="box-92819">
         <h1 class="text-white mb-3">Join The Movement To end Child Poverty</h1>
-        <p><a href="#" class="btn btn-primary py-3 px-4 rounded-0">Donate Now</a></p>
+        <p><a href="#" class="btn btn-primary py-3 px-4 rounded-0">Donasi</a></p>
     </div>
 
     <div class="owl-carousel owl-1 ">
