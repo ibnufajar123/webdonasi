@@ -3,6 +3,13 @@ defined('BASEPATH') or exit('No direct script access allowed');
 
 class Welcome extends CI_Controller
 {
+	public function __construct()
+	{
+		parent::__construct();
+
+		$this->load->model('Model');
+		$this->load->library('form_validation');
+	}
 
 	/**
 	 * Index Page for this controller.
@@ -21,8 +28,11 @@ class Welcome extends CI_Controller
 	 */
 	public function index()
 	{
+		$data['iklan'] = $this->db->query("SELECT * FROM iklan, kategori_iklan, user
+		WHERE kategori_iklan.id_kategori = iklan.id_kategori
+        AND iklan.id_user = user.id")->result();
 		$this->load->view('templates/header');
-		$this->load->view('home');
+		$this->load->view('home', $data);
 		$this->load->view('templates/footer');
 	}
 }
