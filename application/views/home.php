@@ -73,9 +73,10 @@
 
                         <div class="px-3 pt-3 border-top-0 border border shadow-sm">
                             <span class="badge-danger py-1 small px-2 rounded mb-3 d-inline-block"><?= $ik->nama_kategori ?></span>
-                            <h3 class="mb-4"><a href="#"><?= $ik->judul ?></a></h3>
+                            <h3 class="mb-4"><a href="<?= base_url('welcome/donasi/') . $ik->id ?>"><?= $ik->judul ?></a></h3>
                             <div class="border-top border-light border-bottom py-2 d-flex">
-                                <div>Donasi</div>
+                                <!-- <div><a href="<?= base_url('welcome/donasi/') . $ik->id ?>"> Donasi</a></div> -->
+
                                 <div class="ml-auto"><strong class="text-primary">$32,919</strong></div>
                             </div>
 
