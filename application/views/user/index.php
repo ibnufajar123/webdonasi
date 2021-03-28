@@ -237,3 +237,65 @@
         </div>
     </div>
 </div>
+<!-- modal -->
+<?= form_open_multipart('user/pengajuanIklan'); ?>
+<div class="modal fade" id="pengajuaniklan" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal-dialog" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title" id="exampleModalLabel">Tambah Iklan</h5>
+                <button class="close" type="button" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">×</span>
+                </button>
+            </div>
+            <div class="modal-body">
+                <div class="form-group">
+                    <label> kategori</label>
+                    <select name="id_kategori" class="form-control">
+                        <option value="">Pilih Kategori</option>
+                        <?php foreach ($dataKategori as $dt) : ?>
+                            <option value="<?= $dt->id_kategori ?>"><?= $dt->nama_kategori ?></option>
+                        <?php endforeach; ?>
+                    </select>
+                </div>
+                <div class="form-grup" hidden>
+                    <label>ID USER</label>
+                    <input type="text" name="id_user" class="form-control" value="<?= $user['id']; ?>">
+                </div>
+                <div class="form-grup">
+                    <label>Judul</label>
+                    <input type="text" name="judul" class="form-control">
+                </div>
+                <div class="form-grup" hidden>
+                    <label>Tanggal mulai</label>
+                    <input type="text" name="date" class="form-control" value="<?= date('Y-m-d H:i:s'); ?>">
+                </div>
+                <div class="form-grup">
+                    <label>Tanggal Akhir</label>
+                    <input type="date" name="date_end" class="form-control">
+                </div>
+                <div class="form-grup">
+                    <label>Total Dana</label>
+                    <input type="number" name="total_dana" class="form-control">
+                </div>
+                <div class="form-grup">
+                    <label>Cerita</label>
+                    <input type="text" name="cerita" class="form-control">
+                </div>
+                <div class="form-grup" hidden>
+                    <label>Status</label>
+                    <input type="text" name="status" class="form-control" value="0">
+                </div>
+                <div class="form-grup">
+                    <label>Gambar</label>
+                    <input type="file" name="gambar" class="form-control">
+                </div>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                <button type="submit" class="btn btn-primary">Save changes</button>
+            </div>
+        </div>
+    </div>
+</div>
+<?= form_close(); ?>
