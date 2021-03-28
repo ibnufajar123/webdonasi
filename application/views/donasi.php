@@ -1,10 +1,21 @@
 <div class="row align-items-stretch">
     <div class="col-md-6">
-        <img src="<?= base_url('assets/') ?>images/img_1.jpg" alt="Image" class="img-fluid shadow">
+        <div class="cause shadow-sm">
+            <a href="#" class="cause-link d-block">
+                <img src="<?= base_url('assets/') ?>images/img_1.jpg" alt="Image" class="img-fluid">
+                <div class="custom-progress-wrap">
+                    <span class="caption">80% complete</span>
+                    <div class="custom-progress-inner">
+                        <div class="custom-progress bg-warning" style="width: 90%;"></div>
+                    </div>
+                </div>
+            </a>
+        </div>
+        </a>
     </div>
 
     <div class="col-md-6">
-        <div class="bg-white h-100 p-4 shadow">
+        <div class="bg-white  p-4 shadow">
             <h3 class="mb-4 text-cursive">Donate Now</h3>
             <!-- <?php form_open('welcome/inputDonasi'); ?> -->
             <form method="post" action="<?= base_url('welcome/inputDonasi'); ?>">
@@ -31,14 +42,19 @@
 
                 </div>
             </form>
+
         </div>
+        <br>
         <?php foreach ($totalDonasi as $td) : ?>
-            <div>Dana terkumpul saat ini Rp.<?= $td->total ?></div>
+            <div><?= "Dana terkumpul saat ini Rp " . number_format($td->total, 0, '.', '.');  ?></div>
         <?php endforeach; ?>
         <?php foreach ($totalPendonasi as $pd) : ?>
-            <div>Jumlah Pendonasi <?= $pd->pendonasi ?> orang</div>
+            <div><?= "Jumlah Pendonasi " . $pd->pendonasi . " orang" ?></div>
         <?php endforeach; ?>
     </div>
+
+
+</div>
 
 </div>
 </div>

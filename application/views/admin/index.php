@@ -35,7 +35,8 @@
                                                                         echo "Active";
                                                                     } ?></td>
                                 <td> <?= date('d F Y', $du->date_created); ?></td>
-                                <td><a href="<?= site_url('admin/') . $du->id ?>">edit</a></td>
+
+                                <td><a href="<?= site_url('admin/updateAkun') . $du->id ?>">aktifkan akun</a></td>
                             </tr>
                         <?php endforeach; ?>
 

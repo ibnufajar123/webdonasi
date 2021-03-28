@@ -56,13 +56,13 @@
                 <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Fuga ea reprehenderit rerum magnam, ipsum aperiam. Earum, expedita ratione.</p>
             </div>
         </div>
-        <?php foreach ($iklan as $ik) : ?>
-            <div class="row">
+        <div class="row">
+            <?php foreach ($iklan as $ik) : ?>
                 <div class="col-md-4">
                     <div class="cause shadow-sm">
 
                         <a href="#" class="cause-link d-block">
-                            <img src="<?= base_url('assets/') ?>images/img_1.jpg" alt="Image" class="img-fluid">
+                            <img src="<?= base_url('assets/img/') . $ik->gambar ?>" alt="Image" class="img-fluid">
                             <div class="custom-progress-wrap">
                                 <span class="caption">80% complete</span>
                                 <div class="custom-progress-inner">
@@ -77,7 +77,7 @@
                             <div class="border-top border-light border-bottom py-2 d-flex">
                                 <!-- <div><a href="<?= base_url('welcome/donasi/') . $ik->id ?>"> Donasi</a></div> -->
 
-                                <div class="ml-auto"><strong class="text-primary">$32,919</strong></div>
+                                <div class="ml-auto"><strong class="text-primary"><?= "Rp " . number_format($ik->total_dana, 0, '.', '.')  ?></strong></div>
                             </div>
 
                             <div class="py-4">
@@ -90,9 +90,9 @@
 
                     </div>
                 </div>
+            <?php endforeach; ?>
 
-            </div>
-        <?php endforeach; ?>
+        </div>
     </div>
 </div>
 

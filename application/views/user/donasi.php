@@ -32,7 +32,7 @@
             </form>
         </div>
         <?php foreach ($totalDonasi as $td) : ?>
-            <div><?= "Dana terkumpul saat ini Rp " . number_format($td->total, 2, ',', '.');  ?></div>
+            <div><?= "Dana terkumpul saat ini Rp " . number_format($td->total, 0, '.', '.');  ?></div>
         <?php endforeach; ?>
         <?php foreach ($totalPendonasi as $pd) : ?>
             <div><?= "Jumlah Pendonasi " . $pd->pendonasi . " orang" ?></div>

@@ -44,4 +44,8 @@ class Model extends CI_Model
 	{
 		return $this->db->get_where($table, $where);
 	}
+	public function edit_iklan($where, $table)
+	{
+		return $this->db->get_where($table, $where);
+	}
 }
