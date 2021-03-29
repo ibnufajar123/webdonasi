@@ -40,7 +40,7 @@
 </div>
 </div>
 <!-- End of Main Content -->
-<?= form_open_multipart('admin/tambahIklan'); ?>
+<?= form_open_multipart('admin/tambahKategori'); ?>
 <!-- <form method="post" action="<?= base_url('admin/tambahIklan') ?>" enctype="multipart/form-data"> -->
 <div class="modal fade" id="tambahiklan" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
     <div class="modal-dialog" role="document">
