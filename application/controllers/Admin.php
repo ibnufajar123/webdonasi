@@ -75,29 +75,40 @@ class Admin extends CI_Controller
 
     public function konfirmasiIklanAksi()
     {
-        $id = $this->input->post('id');
-        $name = $this->input->post('name');
-        $email = $this->input->post('email');
-        $is_active = $this->input->post('is_active');
-        $role_id = $this->input->post('role_id');
+       $id = $this->input->post('id');
+        $id_kategori = $this->input->post('id_kategori');
+        $id_user = $this->input->post('id_user');
+        $judul = $this->input->post('judul');
+        $date = $this->input->post('date');
+        $date_end = $this->input->post('date_end');
+        $total_dana = $this->input->post('total_dana');
+        $cerita = $this->input->post('cerita');
+        $status = $this->input->post('status');
+        $gambar = $this->input->post('gambar');
 
         $data = array(
-            'name' => $name,
-            'email' => $email,
-            'role_id' => $role_id,
-            'is_active' => $is_active
+            'id_kategori' => $i_kategori,
+            'id_user' => $id_user,
+            'judul' => $judul,
+            'date' => $date,
+            'date_end' => $date_end,
+            'total_dana' => $total_dana,
+            'cerita' => $cerita,
+            'status' => $status,
+            'gambar' => $gambar
+
 
         );
         $where = array(
             'id' => $id
         );
-        $this->Film_model->update_data($where, $data, 'user');
+        $this->Model->update_data($where, $data, 'iklan');
         $this->session->set_flashdata('message', '<div class="alert alert-success alert-dismissible fade show" role="alert">
-		Data film berhasil Ditambahkan
-		<button type="button" class="close" data-dismiss="alert" aria-label="Close">
-		<span aria-hidden="true">&times;</span>
-		</button>
-		</div>');
+        Data film berhasil Ditambahkan
+        <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+        <span aria-hidden="true">&times;</span>
+        </button>
+        </div>');
         redirect('admin');
     }
 
