@@ -168,4 +168,8 @@ class Admin extends CI_Controller
             </div>');
         redirect('admin');
     }
+    public function data()
+    {
+      
+    }
 }
